@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -15,7 +16,40 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-TW">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className}`}>
+        <nav className="fixed z-20 w-full bg-gray-400 py-4">
+          <div className="container flex items-center justify-between">
+            <Link href="/">
+              <h1 className="block h-6 w-20 overflow-hidden whitespace-nowrap bg-logo bg-contain bg-no-repeat indent-[101%]">
+                Next.js
+              </h1>
+            </Link>
+            <ul className="flex gap-4">
+              {[
+                {
+                  title: "首頁",
+                  href: "/",
+                },
+                {
+                  title: "關於",
+                  href: "/about",
+                },
+              ].map(({ title, href }) => (
+                <li key={href}>
+                  <Link href={href}>{title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+        {children}
+        <footer>
+          <hr />
+          <p className="py-4 text-center">
+            © {new Date().getFullYear()} Next.js
+          </p>
+        </footer>
+      </body>
     </html>
   );
 }
