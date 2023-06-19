@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer base {
+  img {
+    @apply transform duration-700 hover:scale-110;
+  }
+}
