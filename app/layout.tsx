@@ -42,7 +42,7 @@ export default function RootLayout({
             </ul>
           </div>
         </nav>
-        {children}
+        <div className="pt-40 text-center">{children}</div>
         <footer>
           <hr />
           <p className="py-4 text-center">
