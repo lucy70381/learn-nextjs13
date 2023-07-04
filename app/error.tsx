@@ -9,7 +9,7 @@ export default function Error({
 }) {
   return (
     <div>
-      <h2>Error! (from parallel_routes/error.tsx)</h2>
+      <h2>Error! (from error.tsx)</h2>
       <pre>{error.message}</pre>
       <button
         onClick={
